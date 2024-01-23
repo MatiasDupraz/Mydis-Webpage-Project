@@ -46,7 +46,7 @@ let products = [
         images: ["https://http2.mlstatic.com/D_NQ_NP_953669-MLU70783337848_082023-O.webp"],
         category: "notebooks",
         categoryID: "MYD4965",
-        ID: 'MYD2273135'
+        ID: 'MYD2273134'
 
     },
     {
