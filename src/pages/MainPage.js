@@ -16,15 +16,13 @@ import banners from './../data/banners'
 function MainPage() {
     return (
         <>
-        <ChatButton/>
-        <NavBar/>
         
+
         <BannerSlider banners={banners}/>
         
         <CardSlider products={products} itemsToShow={3}/>
         <AutoCardSlider products={products} itemsToShow={3}/>
-        
-        <Footer/>
+
         </>
     )
 }

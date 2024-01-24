@@ -1,6 +1,7 @@
 import './App.css';
 import ProductDetail from './components/ProductDetail.js';
 import MainPage from './pages/MainPage.js';
+import ChatButton from './components/ChatButton.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import products from './data/products.js';
@@ -15,6 +16,7 @@ function App(){
         <Routes>
           <Route path='/' element={<ProductDetail title={productExample.title} rate={productExample.rate} price={productExample.price} images={productExample.images} category={productExample.category} ID={productExample.ID} description={productExample.description} stock={productExample.stock} />}/>
         </Routes>
+        <ChatButton/>
       <Footer/>
     </Router>
 

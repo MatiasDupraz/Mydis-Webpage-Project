@@ -1,14 +1,18 @@
 import React, {useState} from 'react'
 import classNames from 'classnames'
+import usePriceFormating from '../hooks/price-formating'
+import Icon from './Icon'
 
 const ProductDetail = ({title, rate, price, images, category, ID, description, stock}) => {
   
+  const formatedPrice = usePriceFormating(price)
+
   const  [heartClicked, setHeartClicked] = useState(false)
   const  [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
 
   const stockClassName = classNames("ml-2 px-1 py-0.5 rounded-md text-base inline-block", (stock < 6) ? 'text-red-600 bg-red-300' : 'text-blue-600 bg-blue-300')
-  const heartButtonClassName = classNames("flex items-center justify-center w-full h-10 p-2 mr-4 text-gray-700 border rounded-md hover:bg-neutral-800 border-neutral-800 lg:w-11 hover:text-gray-50 hover:border-white-600 ", (heartClicked ? 'text-red-600 bg-neutral-800 border-red-600' : ''))
+  const heartButtonClassName = classNames("flex items-center justify-center w-full h-10 p-2 mr-4 text-gray-700 border rounded-md hover:bg-neutral-800 border-neutral-800 lg:w-11 hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white hover:border-white", (heartClicked ? 'bg-gradient-to-r from-red-500 to-red-700 text-white border-white' : ''))
 
 
 
@@ -42,7 +46,9 @@ const ProductDetail = ({title, rate, price, images, category, ID, description, s
 </path>
 </svg>
 </a>
+<div className='flex justify-center align-middle w-full h-96 bg-white'>
 <img className="object-contain w-full lg:h-full" src={images[selectedImage]} alt="primary"/>
+</div>
 <a className="absolute right-0 transform lg:mr-2 top-1/2 translate-1/2" href="#">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="w-5 h-5 text-neutral-500 bi bi-chevron-right" viewBox="0 0 16 16" onClick={() => (setNextIndex())}>
 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
@@ -55,9 +61,9 @@ const ProductDetail = ({title, rate, price, images, category, ID, description, s
     console.log(index)
     return (
       <div className="w-1/2 p-2 sm:w-1/4" key={index} onClick={() => (setSelectedImage(parseInt(index)))}>
-        <a className="block border border-gray-200 hover:border-red-700 " href="#">
+        <div className="block border border-gray-200 hover:border-red-700 " href="#">
         <img className="object-contain w-full lg:h-28" src={image} alt={"imagen N° " + index} />
-        </a>
+        </div>
       </div>
     );
   })}
@@ -114,20 +120,18 @@ const ProductDetail = ({title, rate, price, images, category, ID, description, s
 </li>
 </ul>
 </div>
-<p className="inline-block text-2xl font-semibold text-gray-700 ">
-<span>${price}</span>
-
+<p className="inline-block text-3xl font-semibold ">
+<span className=' text-neutral-800'>{formatedPrice}</span>
 </p>
-</div>
-<div className="mb-6">
-<h2 className="mb-2 text-lg font-bold text-gray-700">Descripción</h2>
-<div className="bg-neutral-100 rounded-xl">
-<div className="p-0.5 ">
-<div className="p-2 rounded-xl lg:p-6  bg-gray-50 font-medium">
-{description}
+<div className='block'>
+<p className='text-base text-neutral-500'>Precio válido por pago en efectivo o transferencia bancaria</p>
+<p className='text-sm text-neutral-700 hover:text-red-500'>Seleccionar forma de envío</p>
 </div>
 </div>
-</div>
+<div className="mb-6 flex">
+<div className='items-center justify-center bg-gray-200 flex rounded-full w-9 h-9 mr-2 text-gray-700'><Icon truck disableHover/></div>
+<h2 className="mb-2 text-lg font-semibold text-gray-700 italic "> Envíos a todo el país</h2>
+
 </div>
 <div className="py-6 mb-6 border-t border-b border-gray-200">
 <span className="text-base text-gray-600">En Stock</span>
@@ -167,14 +171,14 @@ Comprar ahora</a>
 </div>
 </div>
 </div>
-<div className="mb-6">
+<div className="py-6 mb-6 border-t border-b border-gray-200">
 <h2 className="mb-2 text-lg font-bold text-gray-700">Descripción</h2>
-<div className="bg-neutral-100 rounded-xl">
+
 <div className="p-0.5 ">
-<div className="p-2 rounded-xl lg:p-6  bg-gray-50 font-medium">
+<div className="rounded-xl ">
 {description}
 </div>
-</div>
+
 </div>
 </div>
 </div>

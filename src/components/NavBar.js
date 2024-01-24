@@ -2,11 +2,16 @@ import React, { useRef, useState, useEffect } from 'react'
 import Icon from './Icon'
 import Categories from './Categories'
 import SearchBar from './SearchBar'
+import classNames from 'classnames'
 const NavBar = () => {
   const [openDrawer, setOpenDrawer] = React.useState(true)
   const toggleDrawer = (openDrawer) => {
     setOpenDrawer((openDrawer) => !openDrawer)
   }
+
+  const categoriesClassName = classNames(
+    'px-3 text-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400 flex align-midle'
+  )
 
   const buttonRef = useRef(null) //Ref created to handle when the user clicks inside or outside the button
 
@@ -37,7 +42,7 @@ const NavBar = () => {
         <div className="py-2">
           <img src="/img/sg1.png" className='w-auto h-20' alt='Logo Mydis'/>
         </div>
-        <SearchBar className="bg-slate-100 self-center w-1/3"/>
+        <SearchBar className="bg-slate-100 self-center w-1/3 hidden md:flex"/>
         <div className=" self-center flex flex-col">
           
           <a href="#">
@@ -55,17 +60,17 @@ const NavBar = () => {
         
       </div>
       <div>
-        <button ref={buttonRef} className='bg-neutral-900  bg-opacity-50 hover:bg-opacity-80 focus:bg-opacity-100 text-white py-2 px-4 align-middle font-semibold justify-start self-start absolute hover:shadow shadow-black focus:shadow-lg' onClick={() => toggleState()}>CATEGORIAS</button>
-        <div className='bg-neutral-300 h-10 w-full '>
-          
-          <div className='flex items-center align-middle pt-2 justify-center font-semibold'>
+        <button ref={buttonRef} className='hidden md:block bg-neutral-900  bg-opacity-50 hover:bg-opacity-80 focus:bg-opacity-100 text-white py-4 px-4 align-middle font-semibold  absolute hover:shadow shadow-black focus:shadow-lg' onClick={() => toggleState()}>CATEGORIAS</button>
+        <div className='flex md:block bg-neutral-200 h-14 w-full justify-center'>
+          <SearchBar className={'flex md:hidden self-center shadow-sm justify-center  align-middle w-3/4'}/>
+          <div className='hidden lg:flex justify-center items-center font-semibold pt-4'>
             
-            <h2 className='px-3 text-neutral-700 border-r border-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400'>Pc Gamer</h2>
-            <h2 className='px-3 text-neutral-700 border-r border-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400'>Notebooks</h2>
-            <h2 className='px-3 text-neutral-700 border-r border-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400'>Monitores</h2>
-            <h2 className='px-3 text-neutral-700 border-r border-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400'>Pc Gamer</h2>
-            <h2 className='px-3 text-neutral-700 border-r border-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400'>Notebooks</h2>
-            <h2 className='px-3 text-neutral-700 uppercase hover:text-red-900 hover:drop-shadow-lg hover:shadow-red-400'>Monitores</h2>
+            <h2 className={categoriesClassName}>Pc Gamer</h2>
+            <h2 className={categoriesClassName}>Notebooks</h2>
+            <h2 className={categoriesClassName}>Monitores</h2>
+            <h2 className={categoriesClassName}>Pc Gamer</h2>
+            <h2 className={categoriesClassName}>Notebooks</h2>
+            <h2 className={categoriesClassName}>Monitores</h2>
           </div>
         </div>
     </div>
