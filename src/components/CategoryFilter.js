@@ -1,3 +1,4 @@
+//ESTE COMPONENTE NO ESTÁ EN USO
 import React from 'react';
 import products from '../data/products';
 import categories from '../data/categories';

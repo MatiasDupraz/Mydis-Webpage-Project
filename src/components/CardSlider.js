@@ -5,7 +5,7 @@ import ProductCard from './ProductCard'
 
 const CardSlider = ({products}) => {
     const slider = products.map((product, index) => {
-        return <ProductCard key={index} title={product.title} rate={product.rate} price={product.price} image={product.images[0]} category={product.category} categoryID={product.categoryID} ID={product.ID}/>
+        return <ProductCard key={index} title={product.title} rate={product.rate} price={product.price} images={product.images} category={product.category} categoryID={product.categoryID} ID={product.ID}/>
     })
 return (
     <div className='flex px-10 overflow-x-scroll'>

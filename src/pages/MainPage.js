@@ -15,7 +15,7 @@ import banners from './../data/banners'
 
 function MainPage() {
     return (
-        <>
+        <div className='pt-44'>
         
 
         <BannerSlider banners={banners}/>
@@ -23,7 +23,7 @@ function MainPage() {
         <CardSlider products={products} itemsToShow={3}/>
         <AutoCardSlider products={products} itemsToShow={3}/>
 
-        </>
+        </div>
     )
 }
 

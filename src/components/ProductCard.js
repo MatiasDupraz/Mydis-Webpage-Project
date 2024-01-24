@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import usePriceFormating from '../hooks/price-formating';
 
 
-const ProductCard = ({title, rate, price, image, category, ID}) => {
+const ProductCard = ({title, rate, price, images, category, ID}) => {
 	
 	const formatedPrice = usePriceFormating(price)
 
@@ -20,7 +20,7 @@ const ProductCard = ({title, rate, price, image, category, ID}) => {
 return (
 	<div className="bg-neutral-100 shadow-md rounded-sm max-w-sm duration-300 hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2">
 		<a className='flex justify-center align-middle w-full h-96 bg-white' href={`/products/${category}/${ID}`}>
-			<img className="rounded-md flex justify-center p-1 object-contain max-w-full max-h-full m-2" src={image} alt="product pic"/>
+			<img className="rounded-md flex justify-center p-1 object-contain max-w-full max-h-full m-2" src={images[0]} alt="product pic"/>
         </a>
 			<div className="px-5 pb-5 content-between">
 				<a href={`/products/${category}/${ID}`}>
