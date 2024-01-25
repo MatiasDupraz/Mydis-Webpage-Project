@@ -9,12 +9,18 @@ import NavBar from './components/NavBar.js';
 import Footer from './components/Footer.js';
 
 function App(){
-  const productExample = products.find(product => product.ID === 'MYD2273135')
+  //create routes for each product
+  const productRoutes = products.map((product) => {
+    return(
+    <Route path={`/products/${product.category}/${product.ID}`} element={<ProductDetail title={product.title} rate={product.rate} price={product.price} images={product.images} category={product.category} ID={product.ID} description={product.description} stock={product.stock} />}/>)
+  })
+  
   return(
     <Router>
       <NavBar/>
         <Routes>
-          <Route path='/' element={<ProductDetail title={productExample.title} rate={productExample.rate} price={productExample.price} images={productExample.images} category={productExample.category} ID={productExample.ID} description={productExample.description} stock={productExample.stock} />}/>
+          <Route path='/' element={<MainPage/>}/>
+          {productRoutes}
         </Routes>
         <ChatButton/>
       <Footer/>

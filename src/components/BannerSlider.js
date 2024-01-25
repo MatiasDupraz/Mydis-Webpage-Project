@@ -5,10 +5,10 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import classNames from 'classnames';
 
-
-const BannerSlider = ({banners}) => {
-
+const BannerSlider = ({banners, className}) => {
+    const bannerClassName = classNames('w-screen items-center')
     const settings = {
         infinite: true,
         slidesToShow: 1, // Number of slides to show at once
@@ -21,12 +21,12 @@ const BannerSlider = ({banners}) => {
 
     const slider = banners.map((banner, index) => {
         return <div>
-            <img className='w-screen items-center' src={banner.src} alt={"banner " + index}/>
+            <img className={bannerClassName} src={banner.src} alt={"banner " + index}/>
         </div>
     })
 
     return (
-        <Slider className='' {...settings}>
+        <Slider className={className} {...settings}>
         {slider}
         </Slider>
     )

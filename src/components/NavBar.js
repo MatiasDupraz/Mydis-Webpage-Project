@@ -40,7 +40,7 @@ const NavBar = () => {
     <nav className='fixed z-10 w-full '>
       <div className='font-sans flex content-between justify-between text-left py-2 px-6 bg-neutral-950 shadow items-end w-full '>
         <div className="py-2">
-          <img src="/img/sg1.png" className='w-auto h-20' alt='Logo Mydis'/>
+          <a href='/'><img src="/img/sg1.png" className='w-auto h-20' alt='Logo Mydis'/></a>
         </div>
         <SearchBar className="bg-slate-100 self-center w-1/3 hidden md:flex"/>
         <div className=" self-center flex flex-col">
