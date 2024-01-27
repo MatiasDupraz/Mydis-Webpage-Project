@@ -34,10 +34,12 @@ function App() {
   });
 
   const categoriesRoutes = categories.map((category) => {
-    <Route
-      path={`/categories/${category.ID}`}
-      element={<FilteredProducts />}
-    />;
+    return (
+      <Route
+        path={`/categories/${category.ID}`}
+        element={<FilteredProducts />}
+      />
+    );
   });
 
   return (

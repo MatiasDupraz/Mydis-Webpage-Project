@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import categories from "./../data/categories";
 import Icon from "./Icon";
 import classNames from "classnames";
 
 const Categories = ({ state }) => {
+  const [styleState, setStyleState] = useState(state);
+  useEffect(() => {
+    setTimeout(() => {
+      setStyleState(state);
+    }, 200);
+  }, [state]);
   const finalClassName = classNames(
-    "bg-gray-100 shadow-md text-lg text-neutral-600 w-56 z-30 ",
-    state ? "absolute" : "hidden"
+    "bg-gray-100 shadow-md text-lg text-neutral-600 w-56 z-30",
+    styleState ? "absolute" : "hidden"
   );
   const organizeCategories = (categories) => {
     const organized = {};
@@ -19,7 +25,7 @@ const Categories = ({ state }) => {
       }
       organized[category.parentCategoryID].push(category);
     });
-    console.log(organized);
+
     return organized;
   };
 
@@ -34,33 +40,34 @@ const Categories = ({ state }) => {
 
   const renderCategory = (category) => {
     const isLastCategory = !organizedCategories[category.ID];
-
-    return (
+    category.link = () => (
       <Link
         to={`/categories/${category.ID}`}
-        className={isLastCategory ? "cursor-pointer" : ""}
+        key={category.ID}
+        className="cursor-pointer py-2 px-3"
       >
-        <div
-          className="flex hover:bg-neutral-200"
-          key={category.ID}
-          onMouseEnter={() => toggleCategory(category.ID)}
-          onMouseLeave={() => toggleCategory(category.ID)}
-        >
-          {/* Use Link for navigation */}
-
-          <p className="py-2 pl-1">
-            <Icon rightArrowSimple /> {` ${category.name}`}
-          </p>
-
-          {expandedCategories[category.ID] && !isLastCategory && (
-            <div className="bg-gray-100 shadow-md text-lg w-56 ml-56 absolute">
-              {organizedCategories[category.ID].map((subCategory) =>
-                renderCategory(subCategory)
-              )}
-            </div>
-          )}
-        </div>
+        {category.name}
       </Link>
+    );
+    return (
+      <div
+        className="flex hover:bg-neutral-200"
+        key={category.ID}
+        onMouseEnter={() => toggleCategory(category.ID)}
+        onMouseLeave={() => toggleCategory(category.ID)}
+      >
+        <p className="py-2 pl-1 hover:text-red-800">
+          <Icon rightArrowSimple /> {category.link()}
+        </p>
+
+        {expandedCategories[category.ID] && !isLastCategory && (
+          <div className="bg-gray-100 shadow-md text-lg w-56 ml-56 absolute">
+            {organizedCategories[category.ID].map((subCategory) =>
+              renderCategory(subCategory)
+            )}
+          </div>
+        )}
+      </div>
     );
   };
 
