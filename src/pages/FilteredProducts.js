@@ -1,13 +1,23 @@
-//This component takes as parameter the filters and display the products that match
-//It can be the return of the searchbar, a category filter, a brand filter or similar products (suggestions)
-import React from 'react'
+import React from "react";
+import products from "../data/products";
+import ProductCard from "../components/ProductCard";
 
-const FilteredProducts = () => {
-return (
-    <div>
-    
-    </div>
-)
-}
+const FilteredProducts = ({ category }) => {
+  const shownProducts = products.map((product, index) => {
+    return (
+      <ProductCard
+        key={index}
+        title={product.title}
+        rate={product.rate}
+        price={product.price}
+        images={product.images}
+        category={product.category}
+        categoryID={product.categoryID}
+        ID={product.ID}
+      />
+    );
+  });
+  return <div>{shownProducts}</div>;
+};
 
-export default FilteredProducts
+export default FilteredProducts;
