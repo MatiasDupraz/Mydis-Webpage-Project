@@ -5,7 +5,15 @@ import Icon from "./Icon";
 import classNames from "classnames";
 import usePriceFormating from "../hooks/price-formating";
 
-const ProductCard = ({ title, rate, price, images, category, ID }) => {
+const ProductCard = ({
+  title,
+  rate,
+  price,
+  images,
+  category,
+  ID,
+  className,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const formatedPrice = usePriceFormating(price);
@@ -13,6 +21,10 @@ const ProductCard = ({ title, rate, price, images, category, ID }) => {
   if (title.length > 60) {
     return null;
   }
+  const cardClassName = classNames(
+    "bg-neutral-50 shadow-md rounded-sm max-w-[50%] md:max-w-xs duration-300 hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2 " +
+      className
+  );
   const titleClassName = classNames(
     "mt-2 font-semibold tracking-tight",
     isHovered ? "text-red-800" : "",
@@ -27,7 +39,7 @@ const ProductCard = ({ title, rate, price, images, category, ID }) => {
       onMouseLeave={() => {
         setIsHovered(false);
       }}
-      className="bg-neutral-50 shadow-md rounded-sm max-w-[50%] md:max-w-xs duration-300 hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2 "
+      className={cardClassName}
     >
       <a
         className="prevent-select flex justify-center align-middle w-full h-44 md:h-96 bg-white"
@@ -54,7 +66,7 @@ const ProductCard = ({ title, rate, price, images, category, ID }) => {
           </span>
           <a
             href={`/products/${category}/${ID}`}
-            className="text-white bg-gradient-to-r from-indigo-500 to-red-500 hover:bg-blue-800 focus:ring-2  font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-blue-700 col-span-2 md:col-span-1 mx-3"
+            className="text-neutral-900 md:text-xl focus:ring-2  font-medium rounded-lg  text-center focus:ring-blue-700 col-start-3 col-span-1 mx-3"
           >
             +<Icon cart disableHover />
           </a>
