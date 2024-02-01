@@ -40,17 +40,17 @@ const NavBar = () => {
             <img src="/img/sg1.png" className="w-auto h-20" alt="Logo Mydis" />
           </a>
         </div>
-        <SearchBar className="bg-slate-100 self-center w-1/3 hidden md:flex" />
+        <SearchBar className="self-center w-1/3 hidden md:flex  bg-slate-950 border border-gray-500 text-white" buttonClassName={'bg-gray-800 border-0 text-gray-400'} />
         <div className=" self-center flex flex-col">
           <a href="#">
-            <div className="border border-white py-1 px-2 rounded hover:animate-pulse text-md text-white">
-              <Icon user disableHover className={"text-white pr-2"} />
-              Ingresar
+            <div className="border border-gray-600 py-1 px-2 rounded hover:border-gray-200 hover:text-gray-200 text-md text-gray-400 flex">
+              <Icon user disableHover className={"sm:pr-2 sm:pt-1"} />
+              <p className="hidden sm:block">Ingresar</p>
             </div>
           </a>
-          <a href="#" className="text-md no-underline text-white">
+          <a href="#" className="text-md no-underline">
             <div className="mt-2">
-              <Icon cart className={"text-white pl-2"} />
+              <Icon cart disableHover className={"text-gray-400 hover:text-gray-200 pl-2"} />
             </div>
           </a>
         </div>

@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar.js";
 import Footer from "./components/Footer.js";
 import FilteredProducts from "./pages/FilteredProducts.js";
 import categories from "./data/categories.js";
+import ShoppingCart from "./pages/ShoppingCart.js";
 
 function App() {
   //create routes for each product
@@ -47,6 +48,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/cart" element={ShoppingCart}/>
         {productRoutes}
         {categoriesRoutes}
       </Routes>

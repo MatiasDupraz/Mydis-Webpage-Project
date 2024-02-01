@@ -20,7 +20,7 @@ const ProductCard = ({
   const formatedPrice = usePriceFormating(price);
 
   const cardClassName = classNames(
-    "bg-neutral-50 shadow-md rounded-sm max-w-[70%] md:max-w-xs duration-300 aspect-ratio hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2 md:text-lg text-md" +
+    "bg-neutral-50 shadow-md rounded-sm md:max-w-xs duration-300 aspect-ratio hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2 md:text-lg text-md" +
       className
   );
   const titleClassName = classNames(
@@ -28,7 +28,7 @@ const ProductCard = ({
     isHovered ? "text-red-800" : "",
   );
 
-  let finalTitle = useTextFormating(title, 50)
+  let finalTitle = useTextFormating(title, 46)
   
 
   return (

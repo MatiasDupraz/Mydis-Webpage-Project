@@ -12,20 +12,14 @@ import ChatButton from "../components/ChatButton";
 //data
 import products from "./../data/products";
 import { banners, bannersS } from "./../data/banners";
+import GridCardContainer from "../components/GridCardContainer";
 
 function MainPage() {
-  const slidesQuantity = {
-    sm: 2,
-    md: 3,
-    lg: 4,
-    xl: 5,
-  };
 
   return (
-    <div className="pt-[168px]">
+    <div className="pt-[168px] overflow-x-hidden">
       <BannerSlider banners={bannersS} className={"md:hidden"} />
       <BannerSlider banners={banners} className={"hidden md:block"} />
-      <CardSlider products={products} className="sm:hidden" />
       <AutoCardSlider
         products={products}
         slidesQuantity={3}
@@ -41,6 +35,7 @@ function MainPage() {
         slidesQuantity={5}
         className="hidden 2xl:flex"
       />
+      <GridCardContainer products={products} className='lg:hidden'/>
     </div>
   );
 }
