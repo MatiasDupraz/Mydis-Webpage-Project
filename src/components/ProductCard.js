@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Icon from "./Icon";
 import classNames from "classnames";
 import usePriceFormating from "../hooks/price-formating";
+import useTextFormating from "../hooks/long-text-formating";
 
 const ProductCard = ({
   title,
@@ -18,18 +19,17 @@ const ProductCard = ({
 
   const formatedPrice = usePriceFormating(price);
 
-  if (title.length > 60) {
-    return null;
-  }
   const cardClassName = classNames(
-    "bg-neutral-50 shadow-md rounded-sm max-w-[50%] md:max-w-xs duration-300 hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2 " +
+    "bg-neutral-50 shadow-md rounded-sm max-w-[70%] md:max-w-xs duration-300 aspect-ratio hover:shadow-neutral-700 hover:shadow-lg mx-4 flex-shrink-0 my-2 md:text-lg text-md" +
       className
   );
   const titleClassName = classNames(
     "mt-2 font-semibold tracking-tight",
     isHovered ? "text-red-800" : "",
-    title.length > 50 ? "md:text-lg text-md" : "md:text-xl text-md"
   );
+
+  let finalTitle = useTextFormating(title, 50)
+  
 
   return (
     <div
@@ -46,7 +46,7 @@ const ProductCard = ({
         href={`/products/${category}/${ID}`}
       >
         <img
-          className="prevent-select rounded-md flex justify-center p-1 object-contain max-w-full max-h-full m-2"
+          className="prevent-select text- rounded-md flex justify-center p-1 object-contain max-w-full max-h-full m-2"
           src={images[0]}
           alt="product pic"
         />
@@ -56,7 +56,7 @@ const ProductCard = ({
           className="col-span-3 prevent-select "
           href={`/products/${category}/${ID}`}
         >
-          <h3 className={titleClassName}>{title}</h3>
+          <h3 className={titleClassName}>{finalTitle}</h3>
         </a>
 
         <div className="grid grid-cols-3 col-span-3 row-start-2 items-end">

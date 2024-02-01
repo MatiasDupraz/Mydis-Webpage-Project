@@ -5,7 +5,8 @@ let products = [
         images: ["https://www.bhphotovideo.com/images/images1500x1500/jbl_jblflip6blkam_flip_6_waterproof_bluetooth_1693528.jpg"],
         category: "speakers",
         categoryID: "MYD7461",
-        ID: 'MYD231465'
+        ID: 'MYD231465',
+        stock: 17
 
     },
     {
@@ -14,7 +15,8 @@ let products = [
         images: ["https://http2.mlstatic.com/D_NQ_NP_841664-MLA42397008460_062020-O.webp"],
         category: "speakers",
         categoryID: "MYD4512",
-        ID: 'MYD1564825'
+        ID: 'MYD1564825',
+        stock: 10
 
     },
     {
@@ -23,7 +25,8 @@ let products = [
         images: ["https://http2.mlstatic.com/D_NQ_NP_947832-MLU73129428624_122023-O.webp"],
         category: "clocks",
         categoryID: "MYD1532",
-        ID: 'MYD4623892'
+        ID: 'MYD4623892',
+        stock: 7
 
     },
     {

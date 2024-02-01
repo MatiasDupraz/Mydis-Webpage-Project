@@ -13,16 +13,16 @@ const FilteredProducts = ({ category }) => {
         images={product.images}
         category={product.category}
         categoryID={product.categoryID}
-        className={"max-w-[100%]"}
+        className={"max-w-[80%] self-center mx-16 md:mx-4"}
         ID={product.ID}
       />
     );
   });
   return (
-    <div className="flex justify-center pt-[168px] items-center">
-      <div className="grid grid-cols-9 items-center">
+    <div className="flex justify-center pt-[168px] items-center w-full">
+      <div className="grid md:grid-cols-9 items-center w-full ">
         <div className="hidden lg:block md:col-span-1 "></div>
-        <div className="col-span-9 lg:col-span-7  grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center">
+        <div className="col-span-8 col-start-0 lg:col-span-7  grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 mx-auto mb-10 md:mb-0">
           {shownProducts}
           {shownProducts}
         </div>

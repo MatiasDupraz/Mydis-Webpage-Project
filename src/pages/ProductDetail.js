@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import classNames from 'classnames'
 import usePriceFormating from '../hooks/price-formating'
-import Icon from './Icon'
+import Icon from '../components/Icon'
 
 const ProductDetail = ({title, price, images, category, ID, description, stock}) => {
   
@@ -30,8 +30,19 @@ const ProductDetail = ({title, price, images, category, ID, description, stock})
 
   const handleQuantityChange = (event) => {
     // Update the state with the new input value
-    setQuantity(parseInt(event.target.value));
+    let inputValue = parseInt(event.target.value)
+    setQuantity(inputValue);
   };
+
+  const addQuantity = () => {
+    if(quantity < stock)
+    {setQuantity(quantity+1)}
+  }
+
+  const removeQuantity = () => {
+    if(quantity > 1)
+    {setQuantity(quantity-1)}
+  }
 
   return (
     <section className="py-10 font-poppins pt-48">
@@ -102,11 +113,11 @@ const ProductDetail = ({title, price, images, category, ID, description, stock})
 <div className="w-28">
 <div className="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
 <button className="w-20 h-full text-gray-600 bg-gray-100 border-r rounded-l outline-none cursor-pointer hover:bg-gray-300 flex items-center justify-center">
-<span className="text-2xl font-normal" onClick={() => (setQuantity(quantity-1))}>-</span>
+<span className="text-2xl font-normal" onClick={() => (removeQuantity())}>-</span>
 </button>
 <input type="number" className="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none  focus:outline-none text-md hover:text-black appearance-none remove-arrow" placeholder={quantity} value={quantity} onChange={handleQuantityChange}/>
 <button className="w-20 h-full text-gray-600 bg-gray-100 border-l rounded-r outline-none cursor-pointer  hover:text-gray-700 hover:bg-gray-300 flex items-center justify-center">
-<span className="text-2xl font-normal flex items-center" onClick={() => {setQuantity(quantity+1)}}>+</span>
+<span className="text-2xl font-normal flex items-center" onClick={() => {addQuantity()}}>+</span>
 </button>
 </div>
 </div>

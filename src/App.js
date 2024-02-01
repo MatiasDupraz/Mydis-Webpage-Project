@@ -1,5 +1,5 @@
 import "./App.css";
-import ProductDetail from "./components/ProductDetail.js";
+import ProductDetail from "./pages/ProductDetail.js";
 import MainPage from "./pages/MainPage.js";
 import ChatButton from "./components/ChatButton.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";

@@ -28,28 +28,18 @@ function MainPage() {
       <CardSlider products={products} className="sm:hidden" />
       <AutoCardSlider
         products={products}
-        slidesQuantity={1}
-        className="flex sm:hidden items-center justify-center justify-center"
-      />
-      <AutoCardSlider
-        products={products}
-        slidesQuantity={2}
-        className="hidden sm:flex md:hidden"
-      />
-      <AutoCardSlider
-        products={products}
         slidesQuantity={3}
-        className="hidden md:flex lg:hidden"
-      />
-      <AutoCardSlider
-        products={products}
-        slidesQuantity={4}
         className="hidden lg:flex xl:hidden"
       />
       <AutoCardSlider
         products={products}
+        slidesQuantity={4}
+        className="hidden xl:flex 2xl:hidden"
+      />
+      <AutoCardSlider
+        products={products}
         slidesQuantity={5}
-        className="hidden xl:flex"
+        className="hidden 2xl:flex"
       />
     </div>
   );
