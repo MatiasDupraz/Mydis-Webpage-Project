@@ -13,7 +13,7 @@ const SearchBar = ({className, buttonClassName, ...props}) => {
 
   return (
     <form {...props} className={finalClassName}>
-    <input className='bg-transparent border-transparent w-full px-2' placeholder={'Encontrá lo que necesitás acá'} value={searchValue} onChange={handleChangeSearchValue}/>
+    <input className='bg-transparent border-transparent w-full px-2 outline-none  ' placeholder={'Encontrá lo que necesitás acá'} value={searchValue} onChange={handleChangeSearchValue}/>
       <button className={finalButtonClassName}><Icon className={'py-2 px-4 '} disableHover search/></button>
     </form>
   )

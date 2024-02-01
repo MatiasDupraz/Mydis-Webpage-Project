@@ -40,7 +40,7 @@ const NavBar = () => {
             <img src="/img/sg1.png" className="w-auto h-20" alt="Logo Mydis" />
           </a>
         </div>
-        <SearchBar className="self-center w-1/3 hidden md:flex  bg-slate-950 border border-gray-500 text-white" buttonClassName={'bg-gray-800 border-0 text-gray-400'} />
+        <SearchBar className="self-center w-1/3 hidden md:flex  bg-slate-950 border border-gray-500 text-white shadow-none" buttonClassName={'bg-gray-800 border-0 text-gray-400 hover:bg-gray-500'} />
         <div className=" self-center flex flex-col">
           <a href="#">
             <div className="border border-gray-600 py-1 px-2 rounded hover:border-gray-200 hover:text-gray-200 text-md text-gray-400 flex">
@@ -50,7 +50,7 @@ const NavBar = () => {
           </a>
           <a href="#" className="text-md no-underline">
             <div className="mt-2">
-              <Icon cart disableHover className={"text-gray-400 hover:text-gray-200 pl-2"} />
+              <a href="/cart"><Icon cart disableHover className={"text-gray-400 hover:text-gray-200 pl-2"} /></a>
             </div>
           </a>
         </div>

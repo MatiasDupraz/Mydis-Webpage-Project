@@ -1,12 +1,14 @@
 //This code defines a functional component Icon in JavaScript. It takes in several props, determines which icon to display based on the props provided, and handles mouse hover effects. The selected icon is then rendered using the FontAwesomeIcon component from the Font Awesome library.
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faCartShopping, faEnvelope, faAnglesRight, faCaretRight, faLocationDot, faPhone, faMagnifyingGlass, faTruckFast } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCartShopping, faEnvelope, faAnglesRight, faCaretRight, faLocationDot, faPhone, faMagnifyingGlass, faTruckFast, faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { useState } from 'react'
 const Icon = ({
     user, 
     cart,
     rightArrow,
+    upArrow,
+    downArrow,
     rightArrowSimple,
     whatsapp,
     map,
@@ -59,6 +61,10 @@ const Icon = ({
         icon = faMagnifyingGlass
     }else if (truck) {
         icon = faTruckFast
+    }else if (upArrow){
+        icon = faCaretUp
+    }else if (downArrow){
+        icon = faCaretDown
     }
 
     return (
