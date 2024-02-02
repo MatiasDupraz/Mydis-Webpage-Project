@@ -8,7 +8,6 @@ import useTextFormating from "../hooks/long-text-formating";
 
 const ProductCard = ({
   title,
-  rate,
   price,
   images,
   category,
@@ -42,11 +41,11 @@ const ProductCard = ({
       className={cardClassName}
     >
       <a
-        className="prevent-select flex justify-center align-middle w-full h-44 md:h-96 bg-white"
+        className="prevent-select flex justify-center align-middle w-full h-44  bg-white"
         href={`/products/${category}/${ID}`}
       >
         <img
-          className="prevent-select text- rounded-md flex justify-center p-1 object-contain max-w-full max-h-full m-2"
+          className="prevent-select rounded-md flex justify-center p-1 object-contain max-w-full max-h-full m-2"
           src={images[0]}
           alt="product pic"
         />

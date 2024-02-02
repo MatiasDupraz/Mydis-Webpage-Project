@@ -21,7 +21,7 @@ const GridCardContainer = ({products, className, cardClassName}) => {
             images={product.images}
             category={product.category}
             categoryID={product.categoryID}
-            className={cardClassName}
+            className={finalCardClassName}
             ID={product.ID}
           />
         )})

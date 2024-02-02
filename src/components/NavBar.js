@@ -40,7 +40,7 @@ const NavBar = () => {
             <img src="/img/sg1.png" className="w-auto h-20" alt="Logo Mydis" />
           </a>
         </div>
-        <SearchBar className="self-center w-1/3 hidden md:flex  bg-slate-950 border border-gray-500 text-white shadow-none" buttonClassName={'bg-gray-800 border-0 text-gray-400 hover:bg-gray-500'} />
+        <SearchBar className="self-center w-1/3 hidden md:flex  bg-slate-950 border border-gray-500 text-white shadow-none  " buttonClassName={'bg-gray-800 border-0 text-gray-500 hover:bg-gray-500 hover:text-gray-700'} />
         <div className=" self-center flex flex-col">
           <a href="#">
             <div className="border border-gray-600 py-1 px-2 rounded hover:border-gray-200 hover:text-gray-200 text-md text-gray-400 flex">
@@ -66,8 +66,9 @@ const NavBar = () => {
         <div className="flex md:block bg-neutral-200 h-14 w-full justify-center">
           <SearchBar
             className={
-              "flex md:hidden self-center shadow-sm justify-center  align-middle w-3/4"
+              "flex md:hidden self-center shadow-sm justify-center bg-white align-middle w-3/4 "
             }
+            buttonClassName={'text-gray-700'}
           />
           <div className="hidden lg:flex justify-center items-center font-semibold pt-4">
             <Link to="/sad/dsd">

@@ -3,8 +3,7 @@ let products = [
         title: "Parlante JBL Flip 6 Portable Sumergible Bluetooth Negro",
         price: 235000,
         images: ["https://www.bhphotovideo.com/images/images1500x1500/jbl_jblflip6blkam_flip_6_waterproof_bluetooth_1693528.jpg"],
-        category: "speakers",
-        categoryID: "MYD7461",
+        categoryID: "MYD123561",
         ID: 'MYD231465',
         stock: 17
 
@@ -13,8 +12,7 @@ let products = [
         title: "Torre de Sonido Noblex MNT290 Con Bluetooth Negro 100V/240V",
         price: 131999,
         images: ["https://http2.mlstatic.com/D_NQ_NP_841664-MLA42397008460_062020-O.webp"],
-        category: "speakers",
-        categoryID: "MYD4512",
+        categoryID: "MYD123562",
         ID: 'MYD1564825',
         stock: 10
 
@@ -23,8 +21,7 @@ let products = [
         title: "Reloj Casio Illuminator W-218h-1bvcf",
         price: 59840,
         images: ["https://http2.mlstatic.com/D_NQ_NP_947832-MLU73129428624_122023-O.webp"],
-        category: "clocks",
-        categoryID: "MYD1532",
+        categoryID: "MYD175612",
         ID: 'MYD4623892',
         stock: 7
 
@@ -57,8 +54,7 @@ let products = [
         price: 699999,
         images: ["https://http2.mlstatic.com/D_NQ_NP_953669-MLU70783337848_082023-O.webp"],
         stock: 7,
-        category: "notebooks",
-        categoryID: "MYD4965",
+        categoryID: "MYD1243",
         ID: 'MYD2273134'
 
     },
@@ -68,8 +64,7 @@ let products = [
         images: ["https://redragon.es/content/uploads/2021/04/ZEUS-B.png","https://media.solotodo.com/media/products/1243939_picture_1602092500.png", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB50CfpFedP6p2GyeFynwP230XRClSpL7tlC9KmlNkTnX391BmWJAHl8OEGBJ8MZ602og&usqp=CAU","https://http2.mlstatic.com/D_NQ_NP_713652-MLU72571034046_112023-O.webp"],
         description: 'Pensados para todas las plataformas, el ZEUS es el auricular compatible con PC, PS4, XBOX, Nintendo Switch y Móviles Smartphone que los gamers multiplataforma esperaban. Dándonos la posibilidad de conectar por medio de puerto USB o jack 3.5 gracias a sus cables desmontables.',
         stock: 5,
-        category: "notebooks",
-        categoryID: "MYD4965",
+        categoryID: "MYD12312112",
         ID: 'MYD2273135'
 }
 ]

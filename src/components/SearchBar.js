@@ -3,8 +3,8 @@ import Icon from './Icon'
 import classNames from 'classnames'
 
 const SearchBar = ({className, buttonClassName, ...props}) => {
-  const finalClassName = classNames('bg-white border-gray-800 rounded-md justify-end shadow-lg shadow-neutral-700 flex', className)
-  const finalButtonClassName = classNames(buttonClassName, 'border bg-gray-200 border-gray-300 rounded-r-md hover:bg-gray-300 hover:border-gray-400 text-gray-700 hover:text-neutral-800')
+  const finalClassName = classNames('rounded-md justify-end shadow-lg shadow-neutral-700 flex', className)
+  const finalButtonClassName = classNames(buttonClassName, 'border bg-gray-200 border-gray-300 rounded-r-md hover:bg-gray-300 hover:border-gray-400  hover:text-neutral-800')
   const [searchValue, setSearchValue] = useState('')
 
   const handleChangeSearchValue = (event) => {

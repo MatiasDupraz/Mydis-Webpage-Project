@@ -40,6 +40,36 @@ let categories = [
         name: "Redragon",
         parentCategoryID: "MYD1231211",
     },
+    {
+        ID: "MYD1243",
+        name: 'Notebooks',
+        parentCategoryID: "",
+    },
+    {
+        ID: "MYD12356",
+        name: 'Parlantes',
+        parentCategoryID: "",
+    },
+    {
+        ID: 'MYD123561',
+        name: 'Portátiles',
+        parentCategoryID: "MYD12356",
+    },
+    {
+        ID: 'MYD123562',
+        name: 'Torre',
+        parentCategoryID: "MYD12356",
+    },
+    {
+        ID: 'MYD1756',
+        name: "Accesorios",
+        parentCategoryID: ''
+    },
+    {
+        ID: 'MYD175612',
+        name: "Relojes",
+        parentCategoryID: 'MYD1756'
+    }
 ]
 
 export default categories

@@ -38,7 +38,7 @@ function App() {
     return (
       <Route
         path={`/categories/${category.ID}`}
-        element={<FilteredProducts />}
+        element={<FilteredProducts categoryID ={category.ID}/>}
       />
     );
   });
