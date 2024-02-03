@@ -58,7 +58,7 @@ const ChatButton = () => {
         class={finalformWraperClassName}
       >
         <div
-          class="flex items-center justify-between rounded-t-lg bg-neutral-900 py-4 px-9"
+          class="flex items-center justify-between rounded-t-lg bg-neutral-950 py-4 px-9"
         >
           <h3 class="text-lg  text-gray-400">Comunicate con nosotros</h3>
           <button onClick={toggleChatbox} class="text-gray-400">
@@ -79,7 +79,7 @@ const ChatButton = () => {
         <form
           action="https://formbold.com/s/FORM_ID"
           method="POST"
-          class="py-6 px-9 bg-neutral-900"
+          class="py-6 px-9 bg-neutral-950"
         >
           <div class="mb-5">
             <label
@@ -95,7 +95,7 @@ const ChatButton = () => {
               placeholder="Ingresá tu nombre"
               value={formData.name}
               onChange={handleInputChange}
-              class="w-full rounded-md  border border-gray-600 py-3 px-6 text-base bg-neutral-800 text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="w-full rounded-md  border border-gray-600 py-3 px-6 text-base bg-neutral-950 focus:bg-slate-950 text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
   
@@ -113,7 +113,7 @@ const ChatButton = () => {
               placeholder="Ingresá tu consulta"
               value={formData.message}
               onChange={handleInputChange}
-              class="w-full resize-none rounded-md border border-gray-600 py-3 px-6 text-base bg-neutral-800 text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="w-full resize-none rounded-md border border-gray-600 py-3 px-6 text-base bg-neutral-950 focus:bg-slate-950 text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             ></textarea>
           </div>
           <div>
