@@ -8,15 +8,15 @@ After I finish the backend communication (Wich I am actually working) I'll keep 
 
 ### About this project
 
-<h1>Frontend languages</h1>
-<h2>HTMML, CSS, Javascript</h2>
+<h2>Frontend languages</h2>
+<h4>HTMML, CSS, Javascript</h4>
 
-<h1>Frontend frameworks and libraries</h1>
-<h2>React, Tailwind, React Router, ClassNames</h2>
+<h2>Frontend frameworks and libraries</h2>
+<h4>React, Tailwind, React Router, ClassNames</h4>
 
 
-<h1>Backend frameworks and libraries</h1>
-<h2>Express, Axios, Mssql</h2>
+<h2>Backend frameworks and libraries</h2>
+<h4>Express, Axios, Mssql</h4>
 
-<h1>Databases</h1>
-<h2>SQL Server</h2>
+<h2>Databases</h2>
+<h4>SQL Server</h4>
